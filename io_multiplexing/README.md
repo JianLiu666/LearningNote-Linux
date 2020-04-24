@@ -27,8 +27,11 @@ Linux 中基於 socket 的通信本質也是一種 I/O, 使用 socket() 函數�
 ## 常見的 I/O 模式
 
  - 阻塞 I/O (blocking I/O)
+
  - 非阻塞 I/O (nonblocking I/O)
+
  - I/O 多路複用 (I/O multiplexing)
+
  - 異步 I/O (asynchronous I/O)
 
 <br/>

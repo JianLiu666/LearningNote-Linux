@@ -9,7 +9,7 @@
 
 ### Recv-Q & Send-Q
 
-指封包連線的接收隊列和發送隊列, 若不是0時表示封包正在隊列中堆積
+指封包連線的接收隊列和發送隊列, 若不是 0 時表示封包正在隊列中堆積
 
 ### Local Address
 
@@ -27,8 +27,9 @@
 | - | - |
 | LISTEN | 正在等待接收連接 |
 | ESTABLISHED | 正處於活躍狀態的連接 |
-| TIME_WAIT | 一個剛被中止的連接(持續時間約1-2分鐘後轉為 LISTEN) |
+| TIME_WAIT | 一個剛被中止的連接(持續時間約 1-2 分鐘後轉為 LISTEN) |
 
+<br/>
 
 # 情境範例
 
@@ -52,6 +53,7 @@ netstat --inet -a
 
 顯示出來的結果只會剩下目前正處於 `LISTEN` 與 `ESTABLISHED` 狀態的網路連線
 
+<br/>
 
 # Reference
 

@@ -24,8 +24,17 @@ Linux 中基於 socket 的通信本質也是一種 I/O, 使用 socket() 函數�
 
 上述問題可以採用多執行緒的方式來解決, 但是當連線數增加時每次新增的 fd 也會將記憶體塞滿, 且還需要考慮到執行緒在 context switch 上的成本。
 
+## 常見的 I/O 模式
+
+ - 阻塞 I/O (blocking I/O)
+ - 非阻塞 I/O (nonblocking I/O)
+ - I/O 多路複用 (I/O multiplexing)
+ - 異步 I/O (asynchronous I/O)
+
 <br/>
 
 # Reference
 
 1. [Linux 下 I/O 多路複用系統調用介紹](https://blog.csdn.net/pange1991/article/details/86310926)
+
+2. [Linux I/O 模式與 select、poll、epoll 詳解](https://segmentfault.com/a/1190000003063859)

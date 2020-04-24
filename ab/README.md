@@ -10,6 +10,8 @@ ab -h
 ab -n 10000 -c 10 http://www.example.com/index.aspx
 ```
 
+<br/>
+
 # 壓測結果說明
 
 ### 基本項目
@@ -50,6 +52,8 @@ ab -n 10000 -c 10 http://www.example.com/index.aspx
 | Processing | 從 TCP 連線建立後，直到 HTTP 回應(Response)的資料全部都收到所花的時間 |
 | Waiting | 從發送 HTTP 要求完後，到 HTTP 回應(Response)第一個 Byte 所等待的時間 |
 | Total | 於 Connect + Processing 的時間(因為 Waiting 包含在 Processing 時間內了) |
+
+<br/>
 
 # Reference
 

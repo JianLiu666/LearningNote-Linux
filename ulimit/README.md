@@ -10,16 +10,16 @@ ulimit -a
 
 ### 紀錄一些使用過的配置
 
+調整可以同時打開的 fd(註1) 最大值
 ```
 ulimit -n size
 ```
-調整可以同時打開的 fd(註1) 最大值
+
+調整可以同時打開的 Process 最大值
 
 ```
 ulimit -u size
 ```
-調整可以同時打開的 Process 最大值
-
 
 <br/>
 

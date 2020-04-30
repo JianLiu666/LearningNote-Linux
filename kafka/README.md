@@ -13,3 +13,4 @@
 # Reference
 
 1. [Kafka 原理總結](https://zhuanlan.zhihu.com/p/79579389)
+2. [Kafka 中文文檔](http://kafka.apachecn.org/)

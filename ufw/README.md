@@ -8,7 +8,7 @@ sudo apt-get install ufw
 
 ### 狀態查詢
 
-```sh
+```bash
 sudo ufw status
 ```
 

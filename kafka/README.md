@@ -8,6 +8,12 @@
 - 容錯性：允許群集中最多 n-1 個節點失敗
 - 高併發：就是高併發
 
+### 檢查 Kafka 版本
+
+```bash
+find ./ -name \*kafka_\* | head -1 | grep -o '\kafka[^\n]*'
+```
+
 <br/>
 
 # Reference

@@ -4,20 +4,20 @@
 
 ### 檢視目前 Shell 的所有資源限制
 
-```
+```bash
 ulimit -a
 ```
 
 ### 紀錄一些使用過的配置
 
 調整可以同時打開的 fd(註1) 最大值
-```
+```bash
 ulimit -n size
 ```
 
 調整可以同時打開的 Process 最大值
 
-```
+```bash
 ulimit -u size
 ```
 

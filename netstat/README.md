@@ -35,19 +35,19 @@
 
 ## 返回指定通道目前有多少正在進行中的連線數
 
-```
+```bash
 netstat -a | grep ESTABLISHED | grep -c :{port}
 ```
 
 ## 取得有用的連接資訊
 
-```
+```bash
 netstat -a
 ```
 
 上面這個命令顯示出來的結果包含本地內部 Process 之間的連接資訊, 因此為了能正確顯示目前的網路連線資訊, 可以將命令改成如下：
 
-```
+```bash
 netstat --inet -a
 ```
 

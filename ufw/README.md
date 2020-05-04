@@ -2,7 +2,7 @@
 
 ### 安裝指令
 
-```
+```bash
 sudo apt-get install ufw
 ```
 
@@ -14,7 +14,7 @@ sudo ufw status
 
 ### 允許或封鎖任一段 Port
 
-```
+```bash
 sudo ufw allow 80            # 允許 80 port
 sudo ufw allow 7001:7006/tcp # 允許 TCP 7001~7006
 sudo ufw deny 80             # 封鎖 80 port

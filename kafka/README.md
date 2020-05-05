@@ -19,6 +19,6 @@ find ./ -name \*kafka_\* | head -1 | grep -o '\kafka[^\n]*'
 # Reference
 
 1. [Kafka 原理總結](https://zhuanlan.zhihu.com/p/79579389)
-2. [Kafka 中文文檔](http://kafka.apachecn.org/)
+2. [Kafka 官方文件](https://kafka.apache.org/documentation/)
 3. [Kafka Docker](https://github.com/wurstmeister/kafka-docker/blob/master/README.md)
 4. [Using Apache Kafka Command-line Tools](https://docs.cloudera.com/documentation/kafka/latest/topics/kafka_command_line.html)

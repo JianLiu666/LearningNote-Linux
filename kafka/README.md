@@ -8,10 +8,24 @@
 - 容錯性：允許群集中最多 n-1 個節點失敗
 - 高併發：就是高併發
 
-### 檢查 Kafka 版本
+<br/>
+
+# 配置筆記
+
+使用 docker-compose 建立 kafka cluster 時需要注意 `HOST_NAME` 不能設定成 localhost, 可以改成 `HOSTNAME_COMMAND` 使用指令獲取 instance hostname
 
 ```bash
+# 檢查 Kafka 版本
 find ./ -name \*kafka_\* | head -1 | grep -o '\kafka[^\n]*'
+
+# 列出目前所有的 Topics
+kafka-topics.sh --zookeeper zookeeper:2181 --list
+
+# 測試生產者
+kafka-console-producer.sh --broker-list YOUR_HOST_NAME:9092 --topic test1
+
+# 測試消費者
+kafka-console-consumer.sh --bootstrap-server YOUR_HOST_NAME:9092 --topic test1
 ```
 
 <br/>

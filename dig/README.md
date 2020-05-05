@@ -16,22 +16,28 @@ dig www.baidu.com
 ### Dig 返回結果
 
 ```bash
+# 顯示 Dig 命令的版本和輸入參數
 ; <<>> DiG 9.11.3-1ubuntu1.11-Ubuntu <<>> www.baidu.com
 ;; global options: +cmd
+
+# 顯示服務返回的技術詳情, status 為 NOERROR 時表示本次查詢成功結束
 ;; Got answer:
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1330
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
 
+# 顯示查詢的域名
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 65494
 ;; QUESTION SECTION:
 ;www.baidu.com.         IN  A
 
+# 顯示查詢結果
 ;; ANSWER SECTION:
 www.baidu.com.    1200  IN  CNAME  www.a.shifen.com.
 www.a.shifen.com.  299  IN  CNAME  www.wshifen.com.
 www.wshifen.com.   299  IN  A      103.235.46.39
 
+# 顯示本次查詢的統計訊息 (查詢耗時、DNS伺服器、查詢時間...)
 ;; Query time: 271 msec
 ;; SERVER: 127.0.0.53#53(127.0.0.53)
 ;; WHEN: Tue May 05 12:01:07 CST 2020
@@ -48,5 +54,5 @@ www.wshifen.com.   299  IN  A      103.235.46.39
 
 # Reference
 
-1. [使用 Dig 查詢網址 IP](https://it001.pixnet.net/blog/post/344057654-it%E4%BA%8B%E4%BB%B6%E7%B0%BF-%E6%88%91%E8%A6%81%E6%9F%A5%E7%B6%B2%E5%9D%80%E7%9A%84ip%E4%BD%8D%E5%9D%80-%28dig-%E8%88%87-nslookup%29)
-2. [使用 Dig 命令查看 DNS 解析方法](https://kknews.cc/zh-tw/code/e62byx4.html)
+1. [使用 Dig 命令查看 DNS 解析方法](https://kknews.cc/zh-tw/code/e62byx4.html)
+2. [Dig 命令詳解](https://kknews.cc/zh-tw/code/8p9kp5q.html)

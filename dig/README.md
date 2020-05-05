@@ -50,6 +50,11 @@ www.wshifen.com.   299  IN  A      103.235.46.39
 4. 再由 www.a.shifen.com 找到對應的 CNAME 紀錄 www.wshifen.com
 5. 最後返回 A 紀錄對應的 IP 位置
 
+## 補充: 手動設定網址與 IP 對應
+
+Unix Like 系統在向 DNS 查詢網址與 IP 對應前, 會先查詢檔案 `/etc/hosts` 的內容
+因此可以使用 Dig 解析出域名對應的 IP 位置後, 到該檔案手動綁定
+
 <br/>
 
 # Reference

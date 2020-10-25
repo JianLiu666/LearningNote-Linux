@@ -1,0 +1,33 @@
+@startuml tcp
+
+skinparam ParticipantPadding 80
+skinparam BoxPadding 10
+
+participant "Client" as client #BUSINESS
+participant "Server" as server #BUSINESS
+
+autonumber "0."
+
+client -> server : [SYN] seq=0
+activate client #F5DDAD
+activate server #F5DDAD
+
+server -> client : [SYN, ACK] seq=0, ack=1
+
+client -> server : [ACK] seq=1, ack=1
+deactivate client
+deactivate server
+
+client -> server : [FIN, ACK] seq=1, ack=1
+activate client #F5DDAD
+activate server #F5DDAD
+
+server -> client : [ACK] seq=1, ack=2
+
+server -> client : [FIN, ACK] seq=1, ack=2
+
+client -> server : [ACK] ack=2
+deactivate client
+deactivate server
+
+@enduml

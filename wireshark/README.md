@@ -1,25 +1,37 @@
 # 使用筆記
 
+- [使用筆記](#使用筆記)
+  - [Summary](#summary)
+  - [Minitor TCP runtime cycle](#minitor-tcp-runtime-cycle)
+  - [Minitor HTTP request runtime cycle](#minitor-http-request-runtime-cycle)
+  - [Minitor TCP keep alive runtime cycle](#minitor-tcp-keep-alive-runtime-cycle)
+- [Reference](#reference)
+
+---
+
+## Summary
+
 Using wireshark to show entire connection flow.
 
 ---
 
 ## Minitor TCP runtime cycle
 
-### Start a server thread
+**Start a server thread**
 
 ```bash
-# 監聽傳入 port 9000 的所有消息
-nc -l 9000
+# 監聽傳入 port 6687 的所有消息
+nc -l 6687
 ```
 
-### Start a client thread
+**Start a client thread**
 
 ```bash
-# 掃描 port 9000 (i.e. 發出完整的連接/斷開請求, 但不包含資料傳輸)
-nc -vz 127.0.0.1 9000
+# 掃描 port 6687 (i.e. 發出完整的連接/斷開請求, 但不包含資料傳輸)
+nc -vz {server_ipa} 6687
 ```
-### Diagram
+
+**Diagram**
 
 ![TCP](./images/tcp.svg)
 
@@ -27,44 +39,45 @@ nc -vz 127.0.0.1 9000
 
 ## Minitor HTTP request runtime cycle
 
-### Start a server thread
+**Start a server thread**
 
 ```bash
-# 監聽傳入 port 9000 的所有消息
-nc -l 9000
+# 監聽傳入 port 6687 的所有消息
+nc -l 6687
 ```
 
-### Start a client thread
+**Start a client thread**
 
 ```bash
-# 向指定的 url 發送 http request
-curl 127.0.0.1:9000
+# 向指定的 ipa 發送 http request
+curl {server_ipa}:6687
 ```
 
-### Diagram
+**Diagram**
 
 ![HTTP](./images/http.svg)
 
 ---
 
-## Minitor WebSocket runtime cycle
+## Minitor TCP keep alive runtime cycle
 
-### Start a server thread
-
-```bash
-# 監聽傳入 port 9000 的所有消息
-nc -l 9000
-```
-
-### Start a client thread
+**Start a server thread**
 
 ```bash
-telnet 127.0.0.1 9000
+# 監聽傳入 port 6687 的所有消息
+nc -l 6687
 ```
 
-### Diagram
+**Start a client thread**
 
-![WebSocket](images/websocket.svg)
+```bash
+# 建立一條長連接的 tcp 連線
+telnet {server_ipa} 6687
+```
+
+**Diagram**
+
+![TCP_KeepAlive](images/tcp_keepalive.svg)
 
 ---
 

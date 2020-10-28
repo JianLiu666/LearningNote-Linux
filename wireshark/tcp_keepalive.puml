@@ -1,6 +1,6 @@
-@startuml websocket
+@startuml tcp_keepalive
 
-skinparam ParticipantPadding 80
+skinparam ParticipantPadding 100
 skinparam BoxPadding 10
 
 participant "Client" as client #BUSINESS
@@ -18,31 +18,37 @@ client -> server : [ACK] seq=1, ack=1
 deactivate client
 deactivate server
 
-client -> server : send data
+client -> server : [PSH, ACK] seq=1, ack=1, len=6
 activate client #F5DDAD
 activate server #F5DDAD
 
-server -> client : ack
+server -> client : [ACK] seq=1, ack=7
 deactivate client
 deactivate server
 
-client -> server : send data
+client -> server : [PSH, ACK] seq=7, ack=1, len=3
 activate client #F5DDAD
 activate server #F5DDAD
 
-server -> client : ack
+server -> client : [ACK] seq=1, ack=10
 deactivate client
 deactivate server
 
-client -> server : [FIN, ACK] seq=1, ack=1
+client -> server : [PSH, ACK] seq=10, ack=1, len=5
 activate client #F5DDAD
 activate server #F5DDAD
 
-server -> client : [ACK] seq=1, ack=2
+server -> client : [ACK] seq=1, ack=15
+deactivate client
+deactivate server
 
-server -> client : [FIN, ACK] seq=1, ack=2
+client -> server : [FIN, ACK] seq=15, ack=1
+activate client #F5DDAD
+activate server #F5DDAD
 
-client -> server : [ACK] ack=2
+server -> client : [FIN, ACK] seq=1, ack=16
+
+client -> server : [ACK] seq=16, ack=2
 deactivate client
 deactivate server
 

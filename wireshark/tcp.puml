@@ -22,11 +22,9 @@ client -> server : [FIN, ACK] seq=1, ack=1
 activate client #F5DDAD
 activate server #F5DDAD
 
-server -> client : [ACK] seq=1, ack=2
-
 server -> client : [FIN, ACK] seq=1, ack=2
 
-client -> server : [ACK] ack=2
+client -> server : [ACK] seq=2, ack=2
 deactivate client
 deactivate server
 
